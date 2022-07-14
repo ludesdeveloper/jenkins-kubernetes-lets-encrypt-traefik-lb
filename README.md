@@ -11,6 +11,7 @@ This is sample kubernetes installation for jenkins.
 1. Jenkins installed on kubernetes
 2. Ingress(traefik) to jenkins namespace
 3. Secure connection (https) to your jenkins namespace using Let's Encrypt
+   > I am using k3s for testing this repo, as you know, k3s has built-in ingress (traefik), if you don't have ingress, please install first
 
 ### **How To**
 
