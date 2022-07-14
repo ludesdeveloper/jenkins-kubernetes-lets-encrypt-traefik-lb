@@ -1,5 +1,9 @@
 # Jenkins Kubernetes Let's Encrypt
 
+<p align="center">
+<img src="pic/ludes.png" width="500">
+</p>
+
 This is sample kubernetes installation for jenkins.
 
 ### **What You Will Get**
