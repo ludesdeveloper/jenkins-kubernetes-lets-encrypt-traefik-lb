@@ -12,7 +12,15 @@ This is sample kubernetes installation for jenkins.
 
 1. Clone repo
 
+```
+git clone https://github.com/ludesdeveloper/jenkins-kubernetes-lets-encrypt.git
+```
+
 2. Change directory
+
+```
+cd jenkins-kubernetes-lets-encrypt
+```
 
 3. Create namespace
 
