@@ -23,7 +23,7 @@ git clone https://github.com/ludesdeveloper/jenkins-kubernetes-lets-encrypt-trae
 2. Change directory
 
 ```
-cd jenkins-kubernetes-lets-encrypt
+cd jenkins-kubernetes-lets-encrypt-traefik-lb
 ```
 
 3. Create namespace
