@@ -11,9 +11,8 @@ This is sample kubernetes installation for jenkins.
 1. Jenkins installed on kubernetes
 2. Ingress(traefik) to jenkins namespace
 3. Secure connection (https) to your jenkins namespace using Let's Encrypt
-   > I am using k3s for testing this repo, as you know, k3s has built-in ingress (traefik), if you don't have ingress, please install first
 
-### **How To**
+### **Jenkins Installation**
 
 1. Clone repo
 
@@ -59,14 +58,44 @@ chart=jenkinsci/jenkins
 helm install jenkins -n jenkins -f jenkins-values.yaml $chart
 ```
 
-8. Install ingress, please change with your ingress controller ip address
+### **Ingress**
+
+1. Create Traefik namespace
+
+```
+kubectl create namespace traefik
+```
+
+2. Add Traefik repo
+
+```
+helm repo add traefik https://helm.traefik.io/traefik
+```
+
+3. Update repo
+
+```
+helm repo update
+```
+
+4. Install Traefik
+
+```
+helm install traefik traefik/traefik -n traefik
+```
+
+5. Install ingress, please change with your ingress controller ip address
    > I am using nip.io for dns
+
+   > Load balancer will give you public ip, you can use it to set nipIP
 
 ```
 helm install ingress ./ingress --set nipIPAddress=111-111-111-111
 ```
 
-9. Get jenkins password
+### **Jenkins Credential**
+
+1. Get jenkins password (Username default is 'admin')
 
 ```
 jsonpath="{.data.jenkins-admin-password}"
