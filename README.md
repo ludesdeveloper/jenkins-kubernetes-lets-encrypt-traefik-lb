@@ -32,26 +32,21 @@ cd jenkins-kubernetes-lets-encrypt
 kubectl create namespace jenkins
 ```
 
-4. Install operator dependencies
 
-```
-kubectl apply -f operator/
-```
-
-5. Install jenkins operator
+4. Install jenkins operator
 
 ```
 helm repo add jenkinsci https://charts.jenkins.io
 helm repo update
 ```
 
-6. Jenkins objects
+5. Jenkins objects
 
 ```
 helm install jenkins-objects ./jenkins-objects -n jenkins
 ```
 
-7. Create jenkins instance
+6. Create jenkins instance
 
 ```
 chart=jenkinsci/jenkins
@@ -92,6 +87,14 @@ helm install traefik traefik/traefik -n traefik
 ```
 helm install ingress ./ingress --set nipIPAddress=111-111-111-111
 ```
+
+### **Install Operator**
+1. Install operator dependencies
+
+```
+kubectl apply -f operator/
+```
+
 
 ### **Jenkins Credential**
 
