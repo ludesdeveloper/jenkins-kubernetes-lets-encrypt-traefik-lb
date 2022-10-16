@@ -79,7 +79,13 @@ helm repo update
 helm install traefik traefik/traefik -n traefik
 ```
 
-5. Install ingress, please change with your ingress controller ip address
+5. Install operator dependencies
+
+```
+kubectl apply -f operator/
+```
+
+6. Install ingress, please change with your ingress controller ip address
    > I am using nip.io for dns
 
    > Load balancer will give you public ip, you can use it to set nipIP
@@ -87,14 +93,6 @@ helm install traefik traefik/traefik -n traefik
 ```
 helm install ingress ./ingress --set nipIPAddress=111-111-111-111
 ```
-
-### **Install Operator**
-1. Install operator dependencies
-
-```
-kubectl apply -f operator/
-```
-
 
 ### **Jenkins Credential**
 
